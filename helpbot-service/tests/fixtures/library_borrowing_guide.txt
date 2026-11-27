@@ -1,0 +1,6 @@
+Campus Library Borrowing Guide (Fictional Demo)
+
+Standard undergraduate loans last 21 calendar days and may be renewed up to 2 times if no other patron has placed a hold.
+Graduate students and Teaching Assistants receive a 42-day standard loan period with up to 3 renewals.
+Course reserve textbooks are limited to 4-hour in-library loans.
+Overdue fines accrue at $0.50 per day for standard books, capped at $15.00 per item.
