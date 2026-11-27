@@ -1,0 +1,11 @@
+1
+00:00:01,000 --> 00:00:07,500
+The Innovation Lab Study Pods on Floor 2 of Technology Commons are open daily from 7 AM to 10 PM.
+
+2
+00:00:08,000 --> 00:00:15,000
+Each student may reserve a study pod for up to 2 hours per day and up to 6 hours per week using their campus ID.
+
+3
+00:00:16,000 --> 00:00:22,500
+Reservations not checked into within 15 minutes of the start time are automatically released for walk-in groups.

@@ -1,0 +1,52 @@
+name: Assign Serial PR ID
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+# The workflow only edits PR metadata. It does not check out or run PR code.
+permissions:
+  pull-requests: write
+
+jobs:
+  assign-pr-id:
+    name: Assign HelpBot PR ID
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add a unique serial ID to the pull request
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const { owner, repo } = context.repo;
+
+            // GitHub assigns each PR a unique, increasing repository number.
+            // Offset it by 1000: PR #1 becomes PR1001, PR #2 becomes PR1002, etc.
+            // This avoids maintaining a separate counter and prevents collisions.
+            const serial = 1000 + pr.number;
+            const trackingId = `PR${serial}`;
+
+            // Make the operation idempotent if the PR is reopened.
+            const cleanTitle = pr.title.replace(/^\[(?:HBS-PR-\d+|PR\d+)\]\s*/, '').trim();
+            const newTitle = `[${trackingId}] ${cleanTitle || 'Pull request'}`;
+
+            // Replace any existing tracking block instead of duplicating it.
+            const startMarker = '<!-- PR-ID:START -->';
+            const endMarker = '<!-- PR-ID:END -->';
+            const existingBody = pr.body || '';
+            const blockPattern = /<!-- PR-ID:START -->[\s\S]*?<!-- PR-ID:END -->\s*/g;
+            const cleanBody = existingBody.replace(blockPattern, '').trim();
+            const trackingBlock = `${startMarker}\n**PR Tracking ID:** \`${trackingId}\`\n${endMarker}`;
+            const newBody = cleanBody
+              ? `${trackingBlock}\n\n${cleanBody}`
+              : trackingBlock;
+
+            await github.rest.pulls.update({
+              owner,
+              repo,
+              pull_number: pr.number,
+              title: newTitle,
+              body: newBody,
+            });
+
+            core.info(`Assigned ${trackingId} to PR #${pr.number}`);
