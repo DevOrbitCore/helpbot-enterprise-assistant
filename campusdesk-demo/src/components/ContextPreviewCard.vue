@@ -1,26 +1,45 @@
 <template>
-  <details class="card">
-    <summary style="cursor: pointer; font-weight: 600; font-size: 14px">
-      HelpBot Adapter Context Preview (Safe Metadata Only)
+  <details class="card context-card">
+    <summary class="context-summary">
+      <span class="context-summary-left">
+        <svg
+          class="context-summary-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <polyline points="16 18 22 12 16 6" />
+          <polyline points="8 6 2 12 8 18" />
+        </svg>
+        <span>HelpBot Adapter Context Preview (Safe Metadata Only)</span>
+      </span>
+      <svg
+        class="context-chevron"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <polyline points="6 9 12 15 18 9" />
+      </svg>
     </summary>
-    <p class="muted" style="margin: 8px 0">
-      This exact payload is exposed via <code>window.HelpBotHostAdapter.getContext()</code>.
-      Passwords, payment inputs, private form fields, and page HTML are never sent.
-    </p>
-    <pre
-      style="
-        background: #0f172a;
-        color: #e2e8f0;
-        padding: 12px;
-        border-radius: 8px;
-        font-size: 12px;
-        overflow-x: auto;
-        margin: 0;
-      "
-    >{{ JSON.stringify(context, null, 2) }}</pre>
-    <p class="muted" style="margin: 8px 0 0; font-size: 12px">
-      Integration status: {{ statusReason }}
-    </p>
+    <div class="context-body">
+      <p class="muted">
+        This exact payload is exposed via <code>window.HelpBotHostAdapter.getContext()</code>.
+        Passwords, payment inputs, private form fields, and page HTML are never sent.
+      </p>
+      <pre class="context-code">{{ JSON.stringify(context, null, 2) }}</pre>
+      <p class="context-status-line">
+        Integration status: {{ statusReason }}
+      </p>
+    </div>
   </details>
 </template>
 
