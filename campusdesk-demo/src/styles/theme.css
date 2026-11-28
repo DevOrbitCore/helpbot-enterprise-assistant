@@ -1,0 +1,125 @@
+/* ==========================================================================
+   CampusDesk Enterprise ERP — Pantone-Inspired Design System Tokens
+   ==========================================================================
+   Palette inspiration:
+   - Primary Brand:   Pantone 19-4052 TCX Classic Blue (#0F4C81)
+   - Sidebar Anchor:  Pantone 19-4024 TCX Dress Blues / Eclipse (#1B263B)
+   - Secondary Slate: Pantone 17-4021 TCX Blue Slate (#4E6782)
+   - Neutral Canvas:  Pantone 11-4201 TCX Cloud Dancer tint (#F5F6F8)
+   - Semantic Status: Pantone Spruce Green, Ochre Amber, Marsala Red
+   ========================================================================== */
+
+:root {
+  /* Brand & Accent Tokens */
+  --erp-primary: #0f4c81;
+  --erp-primary-hover: #0b3b66;
+  --erp-primary-active: #082d4f;
+  --erp-primary-soft: #ebf2f8;
+  --erp-primary-border: #bdd3e6;
+
+  --erp-secondary: #4e6782;
+  --erp-secondary-soft: #eff3f7;
+
+  /* Sidebar Surface Tokens (Pantone Eclipse / Dress Blues) */
+  --erp-sidebar-bg: #1b263b;
+  --erp-sidebar-elevated: #24344d;
+  --erp-sidebar-active-bg: rgba(255, 255, 255, 0.1);
+  --erp-sidebar-active-indicator: #68a4d9;
+  --erp-sidebar-border: #2c3e59;
+  --erp-sidebar-text: #cfd8e3;
+  --erp-sidebar-text-strong: #ffffff;
+  --erp-sidebar-muted: #8fa3bc;
+
+  /* Neutral Canvas & Surface Tokens */
+  --erp-canvas: #f5f6f8;
+  --erp-surface: #ffffff;
+  --erp-surface-subtle: #f8fafc;
+  --erp-surface-hover: #f1f5f9;
+  --erp-code-bg: #172030;
+  --erp-code-text: #dce6f2;
+
+  /* Border Tokens */
+  --erp-border: #dde3ea;
+  --erp-border-subtle: #eaeef3;
+  --erp-border-strong: #c2cdd8;
+
+  /* Typography Color Tokens (WCAG AA/AAA Contrast) */
+  --erp-text-primary: #1a2433;
+  --erp-text-secondary: #4b5b6e;
+  --erp-text-muted: #66768a;
+
+  /* Semantic Status Tokens */
+  --erp-success-bg: #e8f5f0;
+  --erp-success-text: #165b43;
+  --erp-success-border: #b5dfce;
+  --erp-success-dot: #1f7a5a;
+
+  --erp-warning-bg: #fdf4e3;
+  --erp-warning-text: #8a5300;
+  --erp-warning-border: #edd09a;
+  --erp-warning-dot: #c67d0e;
+
+  --erp-danger-bg: #fbecee;
+  --erp-danger-text: #8e2430;
+  --erp-danger-border: #e8bcc2;
+  --erp-danger-dot: #b83342;
+
+  --erp-info-bg: #ebf2f8;
+  --erp-info-text: #0f4c81;
+  --erp-info-border: #bdd3e6;
+
+  /* Typography Scale */
+  --erp-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --erp-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --erp-text-xs: 0.75rem;      /* 12px */
+  --erp-text-sm: 0.8125rem;    /* 13px */
+  --erp-text-base: 0.875rem;   /* 14px */
+  --erp-text-md: 0.9375rem;    /* 15px */
+  --erp-text-lg: 1.0625rem;    /* 17px */
+  --erp-text-xl: 1.25rem;      /* 20px */
+
+  /* Layout & Spacing Scale (Optimized for 100% Browser Zoom) */
+  --erp-sidebar-width: 256px;
+  --erp-header-height: 62px;
+  --erp-content-max-width: 1180px;
+
+  --erp-space-1: 4px;
+  --erp-space-2: 8px;
+  --erp-space-3: 12px;
+  --erp-space-4: 16px;
+  --erp-space-5: 20px;
+  --erp-space-6: 24px;
+  --erp-space-7: 28px;
+
+  /* Radii */
+  --erp-radius-sm: 4px;
+  --erp-radius-md: 6px;
+  --erp-radius-lg: 8px;
+  --erp-radius-pill: 999px;
+
+  /* Elevation / Shadows (Subtle Enterprise Depth) */
+  --erp-shadow-xs: 0 1px 2px rgba(26, 36, 51, 0.04);
+  --erp-shadow-sm: 0 1px 3px rgba(26, 36, 51, 0.06), 0 1px 2px rgba(26, 36, 51, 0.03);
+  --erp-shadow-focus: 0 0 0 3px rgba(15, 76, 129, 0.18);
+
+  /* Motion & Transitions */
+  --erp-ease: cubic-bezier(0.2, 0, 0, 1);
+  --erp-duration-fast: 140ms;
+  --erp-duration-normal: 200ms;
+
+  /* Legacy Variable Aliases (Preserved for Backwards Compatibility) */
+  --cd-bg: var(--erp-canvas);
+  --cd-surface: var(--erp-surface);
+  --cd-sidebar: var(--erp-sidebar-bg);
+  --cd-sidebar-text: var(--erp-sidebar-text);
+  --cd-sidebar-active: var(--erp-sidebar-elevated);
+  --cd-accent: var(--erp-primary);
+  --cd-border: var(--erp-border);
+  --cd-text: var(--erp-text-primary);
+  --cd-muted: var(--erp-text-secondary);
+  --cd-ok-bg: var(--erp-success-bg);
+  --cd-ok-text: var(--erp-success-text);
+  --cd-warn-bg: var(--erp-warning-bg);
+  --cd-warn-text: var(--erp-warning-text);
+}
